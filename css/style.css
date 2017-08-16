@@ -1,0 +1,145 @@
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background-color: #2b2b2e;
+}
+
+marquee {
+    position: fixed;
+    max-width: 50%;
+
+    left: calc(100% - 200);
+}
+
+h1 {
+    z-index: -1;
+    position: fixed;
+    color: white;
+    font-size: 50px;
+    left: calc(50% - 250px);
+    top: calc(50% + 100px);
+    opacity: 0;
+}
+
+#viana {
+    z-index: -1;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: calc(50% - 50px);
+    animation: vianaStart 1s infinite;
+    left: calc(50% - 50px);
+}
+
+#rel {
+    z-index: 2;
+    width: 0;
+    height: 0;
+
+}
+
+@keyframes gira {
+    0% {
+        transform: rotate(0deg);
+        width: 100px;
+        height: 100px;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+
+    }
+    50% {
+        transform: rotate(359deg);
+        width: 2000px;
+        height: 2000px;
+        top: calc(50% - 1000px);
+        left: calc(50% - 1000px);
+    }
+    100% {
+        transform: rotate(0deg);
+        width: 100px;
+        height: 100px;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+    }
+}
+
+@keyframes relogio {
+    to {
+        left: 0;
+        top: 0;
+        width: 0px;
+        height: 0px;
+
+    }
+    from {
+        left: 99999px;
+        top: 99999px;
+        width: 50000px;
+        height: 30000px;
+    }
+}
+
+@keyframes vianaStart {
+    0% {
+        transform: rotate(10deg);
+        transform-origin: 50% 50%;
+        width: 100px;
+        height: 100px;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(-10deg);
+        transform-origin: 50% 50%;
+        width: 110px;
+        height: 110px;
+        top: calc(50% - 55px);
+        left: calc(50% - 55px);
+        opacity: .95;
+    }
+    100% {
+        transform: rotate(10deg);
+        transform-origin: 50% 50%;
+        width: 100px;
+        height: 100px;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        opacity: .9;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#load{
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: solid 10px transparent;
+
+    border-left-color: transparent;
+    left: calc(50% - 35px);
+    top: calc(50% - 35px);
+    animation: load .8s infinite linear;
+}
+@keyframes load {
+    to{transform: rotate(359deg)}
+    from{transform: rotate(0deg)}
+}
+
